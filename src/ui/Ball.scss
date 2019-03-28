@@ -1,0 +1,70 @@
+@import '../colors';
+
+.Ball {
+  border-radius: 50%;
+  position: relative;
+  border: 2px solid white;
+  color: white;
+  font-size: 5vw;
+  $size: 14vw;
+  width: $size;
+  height: $size;
+  text-align: center;
+  line-height: $size * 0.9;
+
+  &::before {
+    content: '';
+    position: absolute;
+    $off: 0.4rem;
+    top: $off;
+    left: $off;
+    right: $off;
+    bottom: $off;
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+
+  &.marked {
+
+    &::before {
+      border-width: calc(0.5rem + 2px);
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+    }
+  }
+
+  &.red {
+    background-color: #FF4136;
+  }
+
+  &.green {
+    background-color: #2ECC40;
+  }
+
+  &.blue {
+    background-color: #0074D9;
+  }
+
+  &.purple {
+    background-color: #B10DC9;
+  }
+
+  &.brown {
+    background-color: saddlebrown;
+  }
+
+  &.yellow {
+    background-color: #FFDC00;
+  }
+
+  &.orange {
+    background-color: #FF851B;
+  }
+
+  &.gray {
+    background-color: #AAAAAA;
+  }
+
+}

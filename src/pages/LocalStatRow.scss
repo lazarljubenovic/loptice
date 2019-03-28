@@ -1,0 +1,23 @@
+.LocalStatRow {
+  display: flex;
+  width: 100%;
+
+  > * {
+    min-width: 4rem;
+    text-align: right;
+  }
+
+  .balls {
+    display: flex;
+    text-align: center;
+
+    > * {
+      display: block;
+      width: 1.2em;
+    }
+
+    > * + * {
+      margin-left: 0.33em;
+    }
+  }
+}

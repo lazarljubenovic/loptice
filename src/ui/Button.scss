@@ -1,0 +1,88 @@
+@import '../colors';
+
+.Button {
+  background: map-get($colors, yellow);
+  border: none;
+  border-radius: 5px;
+  font-size: .66em;
+  padding-top: .17em;
+  padding-bottom: .17em;
+  text-transform: uppercase;
+  outline: none;
+  color: rgba(black, .86);
+  position: relative;
+  box-shadow: 0 3px 3px 0 rgba(black, .2);
+  transition: all .2s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    color: rgba(black, .33);
+    background: white;
+    box-shadow: none;
+    opacity: .5;
+  }
+
+  .Button-content,
+  .Button-spinner {
+    transition: all .2s ease-out;
+  }
+
+  &.Button-isLoading {
+
+    .Button-spinner {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .Button-content {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+
+  &:not(.Button-isLoading) {
+
+    .Button-spinner {
+      transform: scale(0);
+      opacity: 0;
+    }
+
+    .Button-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  &.Button-secondary {
+    background-color: white;
+    color: rgba(black, .86);
+  }
+
+  .Button-content {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .Button-spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 1em;
+      height: 1em;
+      opacity: .86;
+    }
+  }
+}

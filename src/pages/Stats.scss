@@ -1,0 +1,76 @@
+@import '../colors';
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > * {
+    width: 100%;
+    display: flex;
+  }
+
+   > * + * {
+     margin-top: .5em;
+   }
+}
+
+.stats-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  > * {
+    width: 100%;
+  }
+}
+
+.global {
+  font-size: .9em;
+  color: rgba(black, .86);
+  background-color: white;
+  border-radius: 5px;
+  padding: .33rem;
+
+  table {
+    width: 100%;
+
+    .number {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .username {
+      color: rgba(black, .66);
+    }
+
+    .gain {
+      color: rgba(map-get($colors, green), .66);
+    }
+
+    .loss {
+      color: rgba(map-get($colors, red), .66);
+    }
+
+    .gain, .loss {
+      text-align: right;
+      font-size: .66em;
+    }
+
+
+    .total {
+      text-align: right;
+      width: 20%;
+    }
+  }
+}
+
+.self {
+  margin-top: 1rem;
+  font-size: .75em;
+  flex: 1;
+  overflow-y: scroll;
+  width: 100%;
+  padding: 0.33rem;
+}

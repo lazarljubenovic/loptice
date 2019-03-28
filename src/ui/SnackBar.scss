@@ -1,0 +1,25 @@
+@import '../colors';
+
+.SnackBar {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  color: map-get($colors, red);
+  font-size: 0.66em;
+  padding: 1rem;
+  width: 100%;
+  transition: all .2s ease-out;
+  box-shadow: 0 3px 3px 0 rgba(black, .2);
+
+  &:not(.isOpen) {
+    transform: translateY(-110%);
+  }
+
+  &.isOpen {
+    transform: translateY(0);
+  }
+
+  p {
+    margin: 0;
+  }
+}
